@@ -1,0 +1,10 @@
+# Software Files #
+##################
+*.gz
+*.zip
+*.jar
+.vagrant
+*.bin
+*.vdi
+*.rpm
+*.macros
