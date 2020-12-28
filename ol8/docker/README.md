@@ -21,14 +21,17 @@ vagrant up
 ```
 
 ### Oracle Software
-In addition you will need to download all the required Oracle software and put it into the "software" directory, so it can be copied into place and used during the builds.
+In addition you will need to download all the required software and put it into the "software" directory, so it can be copied into place and used during the builds.
+
 for Oracle Database
 - jdk-8u241-linux-x64.rpm
 - LINUX.X64_193000_db_home.zip
 - V983368-01.zip
 - V988574-01.zip
+
 for db-sample-schemas
 - [db-sample-schemas-master.zip](https://github.com/oracle/db-sample-schemas/archive/master.zip)
+
 for RStudio
 - oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm
 - oracle-instantclient-devel-21.1.0.0.0-1.x86_64.rpm
