@@ -52,6 +52,9 @@ mkdir -p /u01/volumes/ora1930_oradata
 chown -R docker_user:docker_fg /u01
 chmod -R 775 /u01/volumes
 chmod -R g+s /u01/volumes
+mkdir -p /u01/zeppelin/logs
+mkdir -p /u01/zeppelin/notebook
+chmod -R 775 /u01/zeppelin
 
 # Add users so host reports process ownership properly. Not required.
 useradd -u 500 oracle

@@ -60,9 +60,22 @@ echo "docker build RStudio Server 3.6.1." `date`
 echo "******************************************************************************"
 sudo docker build --force-rm=true --no-cache=true   -t thedoc/rstudio:3.6.1  .
 
+echo "******************************************************************************"
+echo "Copy Zeppelin aditional software." `date`
+echo "******************************************************************************"
+cd /u01/dockerfiles/Zeppelin
+cp /vagrant/software/ojdbc8.jar .
+cp /vagrant/software/interpreter_osql.json .
+
+echo "******************************************************************************"
+echo "docker build Apache/Zeppelin 0.9.0" `date`
+echo "******************************************************************************"
+sudo docker build --force-rm=true --no-cache=true   -t thedoc/zeppelin:0.9.0  .
+
 sudo docker image prune -f
 
 echo "******************************************************************************"
 echo "Finished"
-echo " - user docker run to create an ora1930, OAS55 or RStudio container"
+echo " - user docker run to create an ora1930, OAS55, RStudio and/or Zepplin"
+echo "   container"
 echo "******************************************************************************"
