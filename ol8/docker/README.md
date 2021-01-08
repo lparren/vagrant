@@ -111,28 +111,13 @@ docker logs -f rstudio
 docker run --name zeppelin \
   --detach \
   --network oracle_network \
-	-p 8888:8080 \
+  -p 8888:8080 \
   -e ORACLE_CONNECT=172.18.0.22:1521:pdb1930 \
   -e ORACLE_USER=bi \
   -e ORACLE_PASSWORD=bi \
-	-v /u01/zeppelin/logs:/zeppelin/logs \
-	-v /u01/zeppelin/notebook:/zeppelin/notebook \
+  -v /u01/zeppelin/logs:/zeppelin/logs \
+  -v /u01/zeppelin/notebook:/zeppelin/notebook \
   thedoc/zeppelin:0.9.0
 
   docker logs -f zeppelin
 ```
-
-#### Add Interpreter for Oracle
-- Before you start create a user in the oracle database for zeppelin and grant
-- Connect to zeppelin (from your host machine) http://localhost:8888
-- Select anonymous -> Interpreter
-- click the +Create button
-- Interpreter name = osql
-- Interpreter group = jdbc
-- Unter properties set
-  - default.url = jdbc:oracle:thin:@//172.18.0.22:1521/pdb1930
-  - default.user = <your user>
-  - default.password = <password>
-  - default.driver = oracle.jdbc.driver.OracleDriver
-- scroll down to Dependencies -> Artifact and enter /zeppelin/interpreter/jdbc/ojdbc8.jar
-- click save and restart the interpreter
