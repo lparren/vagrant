@@ -112,7 +112,7 @@ docker run --name zeppelin \
   --detach \
   --network oracle_network \
   -p 8888:8080 \
-  -e ORACLE_CONNECT=172.18.0.22:1521:pdb1930 \
+  -e ORACLE_CONNECT=172.18.0.22:1521/pdb1930 \
   -e ORACLE_USER=bi \
   -e ORACLE_PASSWORD=bi \
   -v /u01/zeppelin/logs:/zeppelin/logs \
