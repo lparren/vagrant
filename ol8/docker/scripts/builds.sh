@@ -43,7 +43,6 @@ sudo docker build --force-rm=true --no-cache=true   -t oracle/oas:5.5.0  .
 echo "******************************************************************************"
 echo "Copy RStudio software." `date`
 echo "******************************************************************************"
-
 cd /u01/dockerfiles/Rstudio
 cp /vagrant/software/oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm .
 cp /vagrant/software/oracle-instantclient-devel-21.1.0.0.0-1.x86_64.rpm .
