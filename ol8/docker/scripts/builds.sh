@@ -26,19 +26,34 @@ echo "docker build Oracle 19.3.0 software" `date`
 echo "******************************************************************************"
 sudo docker build --force-rm=true --no-cache=true   --build-arg DB_EDITION=ee   -t oracle/database:19.3.0-ee  .
 
-echo "******************************************************************************"
-echo "Copy OracleAnalyticsServer 5.5.0 software." `date`
+#echo "******************************************************************************"
+#echo "Copy OracleAnalyticsServer 5.5.0 software." `date`
+#echo "******************************************************************************"
+#
+#cd /u01/dockerfiles/OracleAnalyticsServer/5.5.0
+#cp /vagrant/software/V983368-01.zip .
+#cp /vagrant/software/V988574-01.zip .
+#cp /vagrant/software/jdk-8u241-linux-x64.rpm .
+#
+#echo "******************************************************************************"
+#echo "docker build OracleAnalyticsServer 5.5.0." `date`
+#echo "******************************************************************************"
+#sudo docker build --force-rm=true --no-cache=true   -t oracle/oas:5.5.0  .
+
+cho "******************************************************************************"
+echo "Copy OracleAnalyticsServer 5.9.0 software." `date`
 echo "******************************************************************************"
 
-cd /u01/dockerfiles/OracleAnalyticsServer/5.5.0
-cp /vagrant/software/V983368-01.zip .
-cp /vagrant/software/V988574-01.zip .
-cp /vagrant/software/jdk-8u241-linux-x64.rpm .
+cd /u01/dockerfiles/OracleAnalyticsServer/5.9.0
+cp /vagrant/software/jdk-8u281-linux-x64.rpm .
+cp /vagrant/software/Oracle_Analytics_Server_Linux_5.9.0.zip .
+cp /vagrant/software/fmw_12.2.1.4.0_infrastructure_Disk1_1of1.zip .
+cp /vagrant/software/p30657796_122140_Generic.zip .
 
 echo "******************************************************************************"
-echo "docker build OracleAnalyticsServer 5.5.0." `date`
+echo "docker build OracleAnalyticsServer 5.9.0." `date`
 echo "******************************************************************************"
-sudo docker build --force-rm=true --no-cache=true   -t oracle/oas:5.5.0  .
+sudo docker build --force-rm=true --no-cache=true   -t oracle/oas:5.9.0  .
 
 echo "******************************************************************************"
 echo "Copy RStudio software." `date`
