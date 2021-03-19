@@ -8,7 +8,8 @@ dnf install -y dnf-utils zip unzip git
 dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
 dnf config-manager --enable ol8_optional_latest
 dnf config-manager --enable ol8_addons
-dnf install -y libgl xorg-x11-xauth
+dnf install -y xorg-x11-xauth
+
 
 # Enable X11 forwarding
 sed -i -e "s|#X11Forwarding yes|X11Forwarding yes|g"   /etc/ssh/sshd_config
