@@ -111,16 +111,16 @@ docker logs -f oas55
 
 ### Start Oracle OAS 5.9.0 container
 ```
-sudo docker run --name oas55 \
+sudo docker run --name oas59 \
   --detach \
   --network=oracle_network \
   -p 9500-9514:9500-9514 \
   --stop-timeout 600 \
   -e "BI_CONFIG_RCU_DBSTRING=172.18.0.22:1521:pdb1930" \
-  -e "BI_CONFIG_RCU_PWD=oracle" \           
+  -e "BI_CONFIG_RCU_PWD=oracle" \
   oracle/oas:5.9.0
 
-docker logs -f oas55
+docker logs -f oas59
 ```
 
 ### Start RStudio container
