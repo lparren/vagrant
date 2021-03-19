@@ -68,6 +68,7 @@ cp /vagrant/software/ore-client-linux-x86-64-1.5.1.zip .
 cp /vagrant/software/ore-server-linux-x86-64-1.5.1.zip .
 cp /vagrant/software/ore-supporting-linux-x86-64-1.5.1.zip .
 cp /vagrant/software/jdk-8u241-linux-x64.rpm .
+cp /vagrant/software/zeppelin-0.9.0-bin-all.tgz .
 
 echo "******************************************************************************"
 echo "docker build Apache/Zeppelin 0.9.0" `date`

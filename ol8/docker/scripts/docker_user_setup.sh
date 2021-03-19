@@ -13,13 +13,18 @@ echo "**************************************************************************
 echo "Install PyCharm"
 echo "******************************************************************************"
 dnf install -y libgl
-wget https://download-cf.jetbrains.com/python/pycharm-community-2020.3.2.tar.gz
+wget -q https://download-cf.jetbrains.com/python/pycharm-community-2020.3.2.tar.gz
 tar -xvf pycharm-community-2020.3.2.tar.gz
 mv pycharm-community-2020.3.2 pycharm-community
 mv pycharm-community /opt/
 rm pycharm-community-2020.3.2.tar.gz
 
 echo "alias pycharm=\"/opt/pycharm-community/bin/pycharm.sh &\"" >> /home/docker_user/.bash_profile
+
+echo "******************************************************************************"
+echo "Add lazydocker alias"
+echo "******************************************************************************"
+echo "alias lazydocker=\"sudo /usr/local/bin/lazydocker\"" >> /home/docker_user/.bash_profile
 
 echo "*******************************************************"
 echo "*** You need to copy all the software in place now! ***"

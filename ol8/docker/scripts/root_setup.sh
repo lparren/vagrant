@@ -50,6 +50,7 @@ groupadd -g 1042 docker_fg
 useradd -G docker_fg docker_user
 echo "docker_user:vagrant" | chpasswd
 mkdir -p /u01/volumes/ora1930_oradata
+mkdir -p /u01/volumes/oas59_data
 chown -R docker_user:docker_fg /u01
 chmod -R 775 /u01/volumes
 chmod -R g+s /u01/volumes
@@ -72,6 +73,11 @@ curl -L https://github.com/docker/compose/releases/download/1.25.5/docker-compos
 chmod +x /usr/local/bin/docker-compose
 echo "docker_user  ALL=(ALL)  NOPASSWD: /usr/local/bin/docker-compose" >> /etc/sudoers
 echo "alias docker-compose=\"sudo /usr/local/bin/docker-compose\"" >> /home/docker_user/.bash_profile
+
+echo "******************************************************************************"
+echo "Install lazydocker." `date`
+echo "******************************************************************************"
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
 echo "******************************************************************************"
 echo "Copy setup files to the local disks." `date`
