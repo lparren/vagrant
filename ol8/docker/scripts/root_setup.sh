@@ -8,13 +8,18 @@ dnf install -y dnf-utils zip unzip git
 dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
 dnf config-manager --enable ol8_optional_latest
 dnf config-manager --enable ol8_addons
-dnf install -y libgl
+dnf install -y libgl xorg-x11-xauth
+
+# Enable X11 forwarding
+sed -i -e "s|#X11Forwarding yes|X11Forwarding yes|g"   /etc/ssh/sshd_config
+sed -i -e "s|#X11DisplayOffset 10|X11DisplayOffset 10|g"   /etc/ssh/sshd_config
+sed -i -e "s|#X11UseLocalhost yes|X11UseLocalhost yes|g"   /etc/ssh/sshd_config
 
 echo "******************************************************************************"
 echo "Install Docker." `date`
 echo "******************************************************************************"
 dnf install -y docker-ce --nobest
-#yum update -y
+dnf update -y
 
 echo "******************************************************************************"
 echo "Upgrade python" `date`
