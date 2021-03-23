@@ -20,12 +20,17 @@ vagrant plugin install vagrant-vbguest
 vagrant up
 ```
 
+You can log into the VM on ssh port 2222 (default port assigned by vagrant, when more vm's are active this can change) with users: docker or root (the password for all accounts is vagrant). X11 forwarding has been enabled in the vm and docker is sudo enabled.
+
 ### Oracle Software
-In addition you will need to download all the required software and put it into the "software" directory, so it can be copied into place and used during the builds.
+In addition you will need to download all the required software and put it into the "software" directory, so it can be copied into place and used during the builds. (Some downloads are used for more installs, you only need to download the once :-))
 
 for Oracle Database
 - jdk-8u241-linux-x64.rpm
 - LINUX.X64_193000_db_home.zip
+
+for OAS 5.5.0
+- jdk-8u241-linux-x64.rpm
 - V983368-01.zip
 - V988574-01.zip
 
@@ -34,9 +39,6 @@ for OAS 5.9.0
 - [Oracle WebLogic Server 12c (12.2.1.4) Generic - Download the file "Fusion Middleware Infrastructure Installer (1.5 GB)"](https://www.oracle.com/middleware/technologies/weblogic-server-downloads.html#license-lightbox)
 - [Patch 30657796](https://www.oracle.com/solutions/business-analytics/analytics-server/analytics-server.html#license-lightbox)
 - [Oracle_Analytics_Server_Linux_5.9.0.zip](https://www.oracle.com/solutions/business-analytics/analytics-server/analytics-server.html#license-lightbox)
-
-for db-sample-schemas
-- [db-sample-schemas-master.zip](https://github.com/oracle/db-sample-schemas/archive/master.zip)
 
 for RStudio
 - oracle-instantclient-basic-21.1.0.0.0-1.x86_64.rpm

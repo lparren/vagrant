@@ -17,7 +17,6 @@ cp /vagrant/software/LINUX.X64_193000_db_home.zip .
 cp /vagrant/software/ore-server-linux-x86-64-1.5.1.zip .
 cp /vagrant/software/ore-supporting-linux-x86-64-1.5.1.zip .
 cp /vagrant/software/ore-supporting-linux-x86-64-1.5.1.zip .
-cp /vagrant/software/db-sample-schemas-master.zip .
 cp /vagrant/scripts/installORE.sh .
 cp /vagrant/scripts/installSampleSchemas.sh .
 

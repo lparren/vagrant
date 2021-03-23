@@ -8,13 +8,19 @@ dnf install -y dnf-utils zip unzip git
 dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
 dnf config-manager --enable ol8_optional_latest
 dnf config-manager --enable ol8_addons
-dnf install -y xorg-x11-xauth
-
+dnf install -y xorg-x11-xauth  x11vnc
 
 # Enable X11 forwarding
 sed -i -e "s|#X11Forwarding yes|X11Forwarding yes|g"   /etc/ssh/sshd_config
 sed -i -e "s|#X11DisplayOffset 10|X11DisplayOffset 10|g"   /etc/ssh/sshd_config
 sed -i -e "s|#X11UseLocalhost yes|X11UseLocalhost yes|g"   /etc/ssh/sshd_config
+
+echo "******************************************************************************"
+echo "Install google chrome" `date`
+echo "******************************************************************************"
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+dnf install -y ./google-chrome-stable_current_*.rpm
+rm -f ./google-chrome-stable_current_*.rpm
 
 echo "******************************************************************************"
 echo "Install Docker." `date`
